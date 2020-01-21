@@ -3,7 +3,7 @@
 # Main code which connects Python and R:
 
 
-path_to_save = "C:/cmatlab-Roman/DivPrograms/Individual/RomanDoronin/Data/s7s8/feature_dataframes/"
+path_to_save = "your_path"
 filename_to_save = "s7s8_A_feature_duration_df.csv"
 
 adult_df = s7s8_A
