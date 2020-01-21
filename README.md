@@ -3,6 +3,7 @@ How to load dataframes:
 First thing that you need to do is to install library dplyr:
 type (in R console or in the main window - but in main window you need to select pieces of code you wanna run and press Ctrl+Enter)
 >install.packages("dplyr")
+
 then you need to attach it:
 >library(dplyr)
 
