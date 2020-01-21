@@ -7,32 +7,45 @@ install.packages("dplyr")
 ```
 then you need to attach it:
 ```
->library(dplyr)
+library(dplyr)
 ```
 Then you need to set the directory of preprocessing.R to be able to call it. Type:
->setwd("directory_where_preprocessing.R is located")   
+```
+setwd("directory_where_preprocessing.R is located")   
+```
 
 Then add functions from preprocessing.R:
->source("preprocessing.R")
+```
+source("preprocessing.R")
+```
 Then you need to specify the path for your data:
->path = "C:/cmatlab-Roman/DivPrograms/Individual/RomanDoronin/Data/r1r2/"    (or another directory)
->experiment = "r1r2"
-
+```
+path = "C:/cmatlab-Roman/DivPrograms/Individual/RomanDoronin/Data/r1r2/"    (or another directory)
+experiment = "r1r2"
+```
 Then load perch dataframe and preprocess it:
+```
 >r1r2_perch_A = read.csv(paste(path, "perch_A.csv", sep=""))
 >r1r2_perch_A = PreprocessingPerches(r1r2_perch_A)
+```
 (you can set whatever variable names that you want)
  
 Then load and preprocess the dataframes with vocalizations: (you need to change the end of the name of the file depending on which file you wanna open)
+```
 >r1r2_A = read.csv(paste(path, experiment, "_A.csv", sep=""))
 >r1r2_A = Preprocessing(r1r2_A, r1r2_perch_A)
+```
 (note that for the function Preprocessing you need to provide perch data which corresponds to the given dataframe - perch C for the bird C, etc.)
 
-Then you will have preprocessed dataframe, "window" column indicates whether element is inside of any of the perch. t1 and t2 - onsets and offsets are beginning and end timestamps of the corresponding perch for given element. You can also track individual elements by their "element_id" column - for example if you found some strange element and want to check it in flatclust - you can do it by element_id.
+Then you will have preprocessed dataframe, "window" column indicates whether element is inside of any of the perch. t1 and t2 - onsets and offsets are beginning and end timestamps of the corresponding perch for given element. You can also track individual elements by their "element_id" column
 Now if you want to know the number of elements in dataframe, type:
+```
 >nrow(r1r2_A)
+```
 if you wanna check number of only insiders (or only outsiders), type:
+```
 >nrow(filter(r1r2_A, window == "inside"))
+```
 --------------------------------------------
 
 
