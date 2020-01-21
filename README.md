@@ -2,13 +2,16 @@ How to load dataframes:
 
 First thing that you need to do is to install library dplyr:
 type (in R console or in the main window - but in main window you need to select pieces of code you wanna run and press Ctrl+Enter)
->install.packages("dplyr")
-
+```
+install.packages("dplyr")
+```
 then you need to attach it:
+```
 >library(dplyr)
-
+```
 Then you need to set the directory of preprocessing.R to be able to call it. Type:
->setwd("C:/cmatlab-Roman/DivPrograms/Individual/RomanDoronin/Scripts/Analysis/")   (or another directory where preprocessing.R is located)
+>setwd("directory_where_preprocessing.R is located")   
+
 Then add functions from preprocessing.R:
 >source("preprocessing.R")
 Then you need to specify the path for your data:
